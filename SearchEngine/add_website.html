@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="add_website.css"></script>
+		<title>Add websites</title>
+		<link rel="stylesheet" href="add_website.css">
+	</head>
+	<body>
+		<font size="7"><p align="center">Add WebSite</p></font>
+		<form action="add_website.php" method="POST" enctype="multipart/form-data">
+		<table align="center" width="50%">
+			<tr>
+				<td>website title</td>
+				<td><input type="text" name="websitetitle" id="input"></td>
+			</tr>
+			<tr>
+				<td>website link</td>
+				<td><input type="text" name="websitelink"></td>
+			</tr>
+			<tr>
+				<td>website keywords</td>
+				<td><input type="text" name="websitekeywords"></td>
+			</tr>
+			<tr>
+				<td>website description</td>
+				<td><textarea name="websitedesc" id="desc"></textarea></td>
+			</tr>
+			<tr>
+				<td>website image</td>
+				<td><input type="file" name="websitefile"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="addwebsite" id="addbt">
+				&nbsp; &nbsp;
+				<input type="reset" name="reset" id="resetbt"></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>
+<!--<?php 
+include("connection.php");
+if($_POST['addwebsite']){
+	$website_title=$_POST['websitetitle'];
+	$website_link=$_POST['websitelink'];
+	$website_keyword=$_POST['websitekeywords'];
+	$website_desc=$_POST['websitedesc'];
+
+	$filename=$_FILE["uploadfile"]["name"];
+	$tempname=$_FILE["uploadfile"]["tmp_name"];
+
+	$folder="website_img/".$filename;
+	move_uploaded_file($tempname,$folder);
+
+	if($website_title!="" && $website_link!="" && website_keyword!="" && $website_desc!="" && $filename!=""){
+		$query="Insert Into add_website values('$website_title','$website_link','$website_keyword','$website_desc','$folder')";
+		$data=mysqli_query($conn,$query);
+		if($data){
+			echo "<script>alert("website inserted")</script>";
+		}
+		else{
+			echo "<script>alert("faild")</script>";
+		}
+
+	} 
+}
+?>-->
